@@ -1,0 +1,89 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'config/application.rb'
+    - 'doc/styleguide/node_modules/**/*'
+  RunRailsCops: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+Style/CommentAnnotation:
+  Keywords:
+    - TODO      # 何かする/したい要望
+    - FIXME     # 間違った実装やバグってるコード
+    - OPTIMIZE  # パフォーマンスに影響を与える最適化すべき箇所
+    - HACK      # リファクタすべきコードの臭いがする箇所
+    - XXX       # (わかっているが)危険、またその兆候明らかに良くないが動作はする。正当な方法に直すべき。制約で仕方ない場合にも
+    - DANGER    # 個人情報に関するロジック等、変更を行う場合に注意が必要な箇所
+
+Style/WordArray:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/Proc:
+  Enabled: false
+
+Style/EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: single_quotes
+
+# 閾値を上げ、負債が大きくならない様にする
+ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 130.2 # default 15
+
+Metrics/CyclomaticComplexity:
+  Max: 23 # default 6
+
+Metrics/MethodLength:
+  Max: 80 # default 10
+
+Metrics/PerceivedComplexity:
+  Max: 23 # default 7
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Style/IndentationConsistency:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/Lambda:
+  Enabled: false
+
+# TODO LIST
+Style/TrailingWhitespace:
+  Enabled: false
+
+Style/TrailingBlankLines:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false

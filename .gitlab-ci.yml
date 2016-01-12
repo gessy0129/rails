@@ -1,0 +1,11 @@
+before_script:
+  - cp /srv/proj/gessy0129/config/database.yml config/database.yml
+  - bundle install --path=/srv/proj/shared/bundle --jobs=2 --quiet
+  - bundle exec rake db:create db:migrate --trace RAILS_ENV=test
+job:
+  stage:  test 
+  script: 
+    - bundle exec rspec --color --drb --format Fuubar spec
+    - bundle exec i18n-tasks missing
+    - bundle exec rubocop -D -c .rubocop.yml --format simple
+    - bundle exec brakeman --exit-on-warn -o public/brakeman.html

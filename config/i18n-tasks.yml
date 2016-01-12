@@ -1,0 +1,22 @@
+base_locale: ja
+locales: ja
+data:
+  read:
+    - config/locales/%{locale}/*.yml
+    - config/locales/%{locale}.yml
+  write:
+    - config/locales/%{locale}/*.yml
+    - config/locales/%{locale}.yml
+  yaml:
+    write:
+      line_width: -1
+search:
+  paths:
+    - app/
+  relative_roots:
+    - app/views
+    - app/controllers
+    - app/helpers
+    - app/mailers
+  exclude:
+    - app/assets
